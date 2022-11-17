@@ -5,21 +5,34 @@
 
 const myContainer = document.getElementById("container");
 
-for (let i = 0; i < 100; i++){
+const generaTabella = document.getElementById("play");
 
-    let nuovoElemento = createBox ("div", "box");
-    nuovoElemento.append(i);
-    
-    nuovoElemento.addEventListener("click",
-    
-        function (){
-            nuovoElemento.classList.toggle("clicked");
-            console.log(i);
+generaTabella.addEventListener("click",
+
+    function (){
+
+        myContainer.innerHTML = "";
+        console.clear();
+
+        for (let i = 1; i <= 100; i++){
+
+            let nuovoElemento = createBox ("div", "box");
+            nuovoElemento.append(i);
+            
+            nuovoElemento.addEventListener("click",
+            
+                function (){
+                    nuovoElemento.classList.add("clicked");
+                    console.log(i);
+                }
+            );
+            
+            myContainer.appendChild(nuovoElemento);
         }
-    );
-    
-    myContainer.appendChild(nuovoElemento);
-}
+    }
+);
+
+
 
 
 // FUNCTION
